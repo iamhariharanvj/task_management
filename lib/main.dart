@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Manage.io",
-      home: HomeScreen(),
+      home: OnBoardingScreen(),
     );
   }
 }

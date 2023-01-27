@@ -25,25 +25,38 @@ class TaskForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String title = "";
+    String description = "";
+    String amount = "";
+    String nhours = "";
+
     return Container(
       child: Column(
         children: [
           TextField(
             decoration: InputDecoration(hintText: "Enter title"),
+            onChanged: (text) => title = text,
           ),
           TextField(
             maxLines: 8,
             decoration: InputDecoration(hintText: "Description"),
+            onChanged: (text) => description = text,
           ),
           TextField(
             maxLines: 1,
             decoration: InputDecoration(hintText: "Amount of Working Hours"),
+            onChanged: (text) => nhours = text,
           ),
           TextField(
             maxLines: 1,
             decoration: InputDecoration(hintText: "Payment Amount"),
+            onChanged: (text) => amount = text,
           ),
-          CaptureImage(),
+          CaptureImage(
+              title: title,
+              description: description,
+              nhours: nhours,
+              amount: amount),
         ],
       ),
     );
@@ -51,7 +64,18 @@ class TaskForm extends StatelessWidget {
 }
 
 class CaptureImage extends StatefulWidget {
-  const CaptureImage({Key? key}) : super(key: key);
+  const CaptureImage(
+      {Key? key,
+      required this.title,
+      required this.description,
+      required this.nhours,
+      required this.amount})
+      : super(key: key);
+
+  final String title;
+  final String description;
+  final String nhours;
+  final String amount;
 
   @override
   State<CaptureImage> createState() => _CaptureImageState();
@@ -83,7 +107,8 @@ class _CaptureImageState extends State<CaptureImage> {
     });
   }
 
-  void _uploadFile(File f, String title, String amount, String description,String nhours) async {
+  void _uploadFile(File f, String title, String amount, String description,
+      String nhours) async {
     final bucket = FirebaseStorage.instanceFor(
         bucket: "gs://tnstartup-blue-collar.appspot.com/");
     final storageRef = FirebaseStorage.instance.ref();
@@ -97,8 +122,7 @@ class _CaptureImageState extends State<CaptureImage> {
       print(e);
     }
 
-
-    var document = await FirebaseFirestore.instance.collection("tasks")
+    var document = await FirebaseFirestore.instance.collection("tasks");
     var taskid = document.add({
       "title": title,
       "description": description,
@@ -124,7 +148,8 @@ class _CaptureImageState extends State<CaptureImage> {
             onPressed: () async {
               if (_imageFile != null) {
                 print("Uploading");
-                _uploadFile(_imageFile!);
+                _uploadFile(_imageFile!, widget.title, widget.amount,
+                    widget.description, widget.nhours);
               }
             },
             child: Text("Submit"))
