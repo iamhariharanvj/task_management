@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "990945166181",
+    "project_id": "tnstartup-blue-collar",
+    "storage_bucket": "tnstartup-blue-collar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990945166181:android:48aa3d36471fbc4fa2578c",
+        "android_client_info": {
+          "package_name": "com.codecrafters.manage_io"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "990945166181-05jv5aplakl127idhp72r2dkctb9dd85.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvUY6vVkrcdmhRrtqHi7yTdJUQGMl7lmw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "990945166181-05jv5aplakl127idhp72r2dkctb9dd85.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "990945166181-tq8urjafom25rpdep7bubr3lrrmn22nl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tnStartup"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990945166181:android:dfd339d24d4fae2da2578c",
+        "android_client_info": {
+          "package_name": "com.example.tn_startup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "990945166181-bh35jnqrl4t4ktcnavpklbmp68dcu6im.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tn_startup",
+            "certificate_hash": "64d9c1162c1fc8350846de8b31070e850656bb6d"
+          }
+        },
+        {
+          "client_id": "990945166181-05jv5aplakl127idhp72r2dkctb9dd85.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvUY6vVkrcdmhRrtqHi7yTdJUQGMl7lmw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "990945166181-05jv5aplakl127idhp72r2dkctb9dd85.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "990945166181-tq8urjafom25rpdep7bubr3lrrmn22nl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tnStartup"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
