@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:manage_io/screens/otp_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -31,7 +32,14 @@ class _LoginScreen extends StatelessWidget {
           timeout: Duration(seconds: 60),
           verificationCompleted: (PhoneAuthCredential credential) {},
           verificationFailed: (FirebaseAuthException e) {
-            print(e);
+            Fluttertoast.showToast(
+                msg: e.toString(),
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.CENTER,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.red,
+                textColor: Colors.white,
+                fontSize: 16.0);
           },
           codeSent: (String verificationId, int? forceResending) {
             Navigator.push(
